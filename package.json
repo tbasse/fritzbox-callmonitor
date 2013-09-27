@@ -1,0 +1,37 @@
+{
+  "name": "fritzbox-callmonitor",
+  "version": "1.0.0",
+  "description": "Eventbased callmonitor for FRITZ!Box",
+  "author": {
+    "name": "Thorsten Basse",
+    "email": "himself@tagedieb.com",
+    "url": "https://github.com/tbasse"
+  },
+  "keywords": [
+    "fritzbox",
+    "fritz.box",
+    "callmonitor",
+    "phone"
+  ],
+  "main": "./index.js",
+  "engines": {
+    "node": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tbasse/fritzbox-callmonitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tbasse/fritzbox-callmonitor/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "dependencies": {
+    "moment": "~2.2.1"
+  },
+  "devDependencies": {
+  }
+}

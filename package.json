@@ -1,7 +1,7 @@
 {
   "name": "fritzbox-callmonitor",
   "version": "1.0.0",
-  "description": "Eventbased callmonitor for FRITZ!Box",
+  "description": "TCP Client that emits data for incoming, outgoing, started and ended calls of your FritzBox",
   "author": {
     "name": "Thorsten Basse",
     "email": "himself@tagedieb.com",
@@ -30,7 +30,6 @@
     }
   ],
   "dependencies": {
-    "moment": "~2.2.1"
   },
   "devDependencies": {
   }

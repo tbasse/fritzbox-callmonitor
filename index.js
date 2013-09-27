@@ -18,12 +18,19 @@ Date;DISCONNECT;ConnectionID;DurationInSeconds;
 
 var net    = require('net');
 var events = require('events');
-var moment = require('moment');
 
 var CallMonitor = function (host, port) {
   var self = this;
   this.call = {};
   events.EventEmitter.call(this);
+
+  function fritzboxDateToUnix(string) {
+    var d = string.match(/[0-9]{2}/g);
+    var result = '';
+    result += '20' + d[2] + '-' + d[1] + '-' + d[0];
+    result += ' ' + d[3] + ':' + d[4] + ':' + d[5];
+    return Math.floor(new Date(result).getTime() / 1000);
+  }
 
   function parseMessage(message) {
     message = message
@@ -33,7 +40,7 @@ var CallMonitor = function (host, port) {
               .replace(/[\n\r]/)
               .replace(/;$/, '')
               .split(';');
-    message[0] = moment(message[0], 'DD.MM.YY HH:mm:ss').unix();
+    message[0] = fritzboxDateToUnix(message[0]);
     return message;
   }
 

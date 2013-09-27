@@ -24,6 +24,8 @@ var CallMonitor = function (host, port) {
   this.call = {};
   events.EventEmitter.call(this);
 
+  port = port || 1012;
+
   function fritzboxDateToUnix(string) {
     var d = string.match(/[0-9]{2}/g);
     var result = '';
@@ -32,14 +34,12 @@ var CallMonitor = function (host, port) {
     return Math.floor(new Date(result).getTime() / 1000);
   }
 
-  function parseMessage(message) {
-    message = message
-              .toString()
-              .toLowerCase()
-              .replace(/[\n\r]/g, '')
-              .replace(/[\n\r]/)
-              .replace(/;$/, '')
-              .split(';');
+  function parseMessage(buffer) {
+    var message = buffer.toString()
+                  .toLowerCase()
+                  .replace(/[\n\r]$/, '')
+                  .replace(/;$/, '')
+                  .split(';');
     message[0] = fritzboxDateToUnix(message[0]);
     return message;
   }

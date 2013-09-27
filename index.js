@@ -22,7 +22,6 @@ var events = require('events');
 var CallMonitor = function (host, port) {
   var self = this;
   this.call = {};
-  events.EventEmitter.call(this);
 
   port = port || 1012;
 
@@ -89,6 +88,7 @@ var CallMonitor = function (host, port) {
         caller: self.call[data[2]]['caller'],
         called: self.call[data[2]]['called']
       });
+      return;
     }
 
     if (data[1] === 'disconnect') {
@@ -98,6 +98,7 @@ var CallMonitor = function (host, port) {
       var call = self.call[data[2]];
       delete(self.call[data[2]]);
       self.emit('disconnected', call);
+      return;
     }
 
   });

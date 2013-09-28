@@ -1,10 +1,11 @@
 fritzbox-callmonitor
 ====================
 
-TCP Client that emits data for incoming, outgoing, started and ended calls of your FritzBox.
+node.js TCP Client that emits data for incoming, outgoing, started and ended calls of your FritzBox.
 
 Requirements:
-Enable the callmonitor in your Fritzbox by entering the following code into your telephone: `#96*5*`
+Enable the callmonitor in your Fritzbox  
+by entering the following code into your telephone: `#96*5*`
 
 
 ## Example

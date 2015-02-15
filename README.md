@@ -7,6 +7,10 @@ Requirements:
 Enable the callmonitor in your Fritzbox  
 by entering the following code into your telephone: `#96*5*`
 
+## Install
+
+```npm install node-fritzbox-callmonitor```
+
 
 ## Example
 

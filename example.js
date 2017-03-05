@@ -36,7 +36,7 @@ monitor.on('disconnected', function (call) {
 monitor.on('error', function (err) { /* handle errors here */
   console.log(err.err.code);
   if (err.err.code=="ENETUNREACH"){
-      console.log('FB CallMonitor: Ethernet is not present! Please check an restart!');
+      console.log('FB CallMonitor: Ethernet is not present! Please check and restart!');
   }
   if (err.err.code=="ETIMEDOUT"){
       console.log('FB CallMonitor: connection to FB@'+fritzbox.address+' Port:'+fritzbox.port+ ' not established. Reconnecting...');

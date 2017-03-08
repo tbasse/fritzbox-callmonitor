@@ -1,6 +1,6 @@
 {
   "name": "fritzbox-callmonitor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "TCP Client that emits data for incoming, outgoing, started and ended calls of your FritzBox",
   "author": {
     "name": "Thorsten Basse",

@@ -44,6 +44,10 @@ var CallMonitor = function (host, port) {
   }
 
   var client = net.createConnection(port, host);
+  
+  client.on('error', function (err) { /* errors were sent here */
+    self.emit('error', {err});
+  });
 
   client.addListener('data', function (chunk) {
     var data = parseMessage(chunk);

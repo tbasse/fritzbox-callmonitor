@@ -38,6 +38,10 @@ monitor.on('disconnected', function (data) {
   console.log('- Connection Ended');
   console.log(data);
 });
+
+monitor.on('error', function (error) {
+  console.log(error);
+}).
 ```
 
 ## LICENSE

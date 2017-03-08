@@ -33,14 +33,16 @@ monitor.on('disconnected', function (call) {
   console.log('');
 });
 
-monitor.on('error', function (err) { /* handle errors here */
-  console.log(err.err.code);
-  if (err.err.code=="ENETUNREACH"){
-      console.log('FB CallMonitor: Ethernet is not present! Please check and restart!');
+monitor.on('error', function (error) {
+  switch (error.code) {
+    case 'ENETUNREACH':
+      console.log(`Cannot reach ${error.address}:${error.port}. Please check your connection.`);
+      break;
+    case 'ECONNREFUSED':
+      console.log(`Connection refused on ${error.address}:${error.port}`);
+      break;
+    default:
+      console.log(error);
+      break;
   }
-  if (err.err.code=="ETIMEDOUT"){
-      console.log('FB CallMonitor: connection to FB@'+fritzbox.address+' Port:'+fritzbox.port+ ' not established. Reconnecting...');
-      monitor = new CallMonitor(fritzbox.address, fritzbox.port);
-  }
-
 });

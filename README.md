@@ -15,7 +15,7 @@ by entering the following code into your telephone: `#96*5*`
 ## Example
 
 ```js
-var CallMonitor = require('callmonitor');
+var CallMonitor = require('node-fritzbox-callmonitor');
 
 var monitor = new CallMonitor('192.168.178.1', 1012);
 
@@ -41,7 +41,7 @@ monitor.on('disconnected', function (data) {
 
 monitor.on('error', function (error) {
   console.log(error);
-}).
+});
 ```
 
 ## LICENSE
